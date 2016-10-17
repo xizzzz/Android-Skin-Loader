@@ -100,7 +100,7 @@ public class SettingActivity extends BaseActivity {
 				new ILoaderListener() {
 					@Override
 					public void onStart() {
-						L.e("startloadSkin");
+						L.e("startloadSkin ");
 					}
 
 					@Override
