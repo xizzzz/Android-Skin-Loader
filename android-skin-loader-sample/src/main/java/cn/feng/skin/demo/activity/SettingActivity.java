@@ -44,7 +44,7 @@ public class SettingActivity extends BaseActivity {
 
 	private void initView() {
 		titleText = (TextView) findViewById(R.id.title_text);
-		titleText.setText("设置皮肤");
+		titleText.setText("Skin Setting");
 		setOfficalSkinBtn = (Button) findViewById(R.id.set_default_skin);
 		setNightSkinBtn = (Button) findViewById(R.id.set_night_skin);
 		
@@ -52,11 +52,11 @@ public class SettingActivity extends BaseActivity {
 		isOfficalSelected = !SkinManager.getInstance().isExternalSkin();
 		
 		if(isOfficalSelected){
-			setOfficalSkinBtn.setText("官方默认(当前)");
-			setNightSkinBtn.setText("黑色幻想");
+			setOfficalSkinBtn.setText("Default(current)");
+			setNightSkinBtn.setText("BlackFantacy");
 		}else{
-			setNightSkinBtn.setText("黑色幻想(当前)");
-			setOfficalSkinBtn.setText("官方默认");			
+			setNightSkinBtn.setText("BlackFantacy(current)");
+			setOfficalSkinBtn.setText("Default");
 		}
 		
 		setNightSkinBtn.setOnClickListener(new OnClickListener() {
@@ -79,9 +79,9 @@ public class SettingActivity extends BaseActivity {
 	protected void onSkinResetClick() {
 		if(!isOfficalSelected){
 			SkinManager.getInstance().restoreDefaultTheme();
-			Toast.makeText(getApplicationContext(), "切换成功", Toast.LENGTH_SHORT).show();			
-			setOfficalSkinBtn.setText("官方默认(当前)");
-			setNightSkinBtn.setText("黑色幻想");
+			Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+			setOfficalSkinBtn.setText("Default(current)");
+			setNightSkinBtn.setText("BlackFantacy");
 			isOfficalSelected = true;
 		}
 	}
@@ -92,7 +92,7 @@ public class SettingActivity extends BaseActivity {
 		File skin = new File(SKIN_DIR);
 
 		if(skin == null || !skin.exists()){
-			Toast.makeText(getApplicationContext(), "请检查" + SKIN_DIR + "是否存在", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "Please check whether " + SKIN_DIR + " exists ", Toast.LENGTH_SHORT).show();
 			return;
 		}
 
@@ -106,16 +106,16 @@ public class SettingActivity extends BaseActivity {
 					@Override
 					public void onSuccess() {
 						L.e("loadSkinSuccess");
-						Toast.makeText(getApplicationContext(), "切换成功", Toast.LENGTH_SHORT).show();
-						setNightSkinBtn.setText("黑色幻想(当前)");
-						setOfficalSkinBtn.setText("官方默认");		
+						Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+						setNightSkinBtn.setText("BlackFantacy(current)");
+						setOfficalSkinBtn.setText("Default");
 						isOfficalSelected = false;
 					}
 
 					@Override
 					public void onFailed() {
 						L.e("loadSkinFail");
-						Toast.makeText(getApplicationContext(), "切换失败", Toast.LENGTH_SHORT).show();
+						Toast.makeText(getApplicationContext(), "Failed to load skin", Toast.LENGTH_SHORT).show();
 					}
 				});
 	}

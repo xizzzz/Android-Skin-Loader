@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="每日新闻"
+        android:text="Articles"
         skin:enable="true" 
         android:visibility="gone"
         android:textColor="@color/color_title_bar_text"
@@ -28,5 +28,17 @@
         android:layout_marginRight="20dp"
         skin:enable="true"
         android:background="@drawable/setting_btn_selector"/>
+
+    <Button
+        android:text="Load More Articles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/button"
+        android:layout_toRightOf="@+id/title_text"
+        android:layout_toEndOf="@+id/title_text"
+        android:layout_alignTop="@+id/title_bar_setting_btn"
+        android:onClick='loadArticles' />
 
 </RelativeLayout>

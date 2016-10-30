@@ -102,7 +102,6 @@ public class ArticleListFragment extends BaseFragment{
 	
 	private void dynamicAddTitleView() {
 		TextView textView = new TextView(getActivity());
-		textView.setText("Small Article (动态new)");
 		RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		param.addRule(RelativeLayout.CENTER_IN_PARENT);
 		textView.setLayoutParams(param);
