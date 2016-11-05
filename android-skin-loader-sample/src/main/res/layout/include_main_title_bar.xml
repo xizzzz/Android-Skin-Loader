@@ -33,12 +33,10 @@
         android:text="Load More Articles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
         android:id="@+id/button"
+        android:onClick="loadArticles"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/title_text"
-        android:layout_toEndOf="@+id/title_text"
-        android:layout_alignTop="@+id/title_bar_setting_btn"
-        android:onClick='loadArticles' />
+        android:layout_toEndOf="@+id/title_text" />
 
 </RelativeLayout>
