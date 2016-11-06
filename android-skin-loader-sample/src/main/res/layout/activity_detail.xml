@@ -11,12 +11,36 @@
         android:id="@+id/title_bar_layout"
         layout="@layout/include_detail_title_bar" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number|phone"
+        android:text="phone number"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/title_bar_layout" />
+
+    <Button
+        android:text="Send SMS via DirectShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:onClick="SendSMS"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/title_bar_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
         android:scrollbars="none"
-        android:layout_below="@id/title_bar_layout" >
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button2">
 
         <TextView
             android:id="@+id/detail_text"
@@ -24,10 +48,10 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="6sp"
             android:layout_margin="10dp"
-            skin:enable="true" 
+            skin:enable="true"
             android:textSize="18sp"
             android:textColor="@color/color_new_item_synopsis" />
-        
+
     </ScrollView>
 
 </RelativeLayout>
